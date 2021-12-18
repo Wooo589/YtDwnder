@@ -1,0 +1,342 @@
+:root {
+    --black: #292929;
+    --gray: #b4b4b4;
+    --main-red: #fe0002;
+    --light-red-one: #ec7e7b;
+    --light-red-two: #e46562;
+    --white: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow-x: hidden;
+}
+
+#header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 8vh;
+    padding: 1rem;
+    width: 100%;
+    background: var(--light-red-two);
+    border-radius: 0.125em;
+}
+
+#logo {
+    cursor: pointer;
+    letter-spacing: 0.175em;
+}
+
+
+.nav-list, .f-list {
+    list-style: none;
+}
+
+.nav-list .list-item, #f-list-one .list-item{
+    padding: 0 2rem;
+    display: inline-flex;
+    letter-spacing: 0.125em;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--black);
+    transition: 0.2s
+}
+
+a:hover {
+    opacity: 0.6;
+    color: var(--gray);
+}
+
+#dropdown {
+    display: none;
+    cursor: pointer;
+}
+
+#dropdown .line {
+    width: 1.625em;
+    height: 0.125em;
+    background: var(--gray);
+    margin: 0.438em;
+}
+
+#introduction-section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;   
+}
+
+.title {
+    text-align: center;
+    width: 50%;
+}
+
+.text {   
+    text-align: justify;
+    margin: 2rem 0;
+    width: 50%
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.message {
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1em;
+    height: 7vh;
+    width: 50vw;
+    background: var(--gray);
+    display: none;
+}
+
+#main .form-group {
+    padding: 1.11rem 0;
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+}
+
+#url {
+    padding: 0.75em 1em;
+    height: 1vh; 
+}
+
+.form-control {
+    border: 0.125em solid var(--light-red-one);
+    border-radius: 0.188em;
+    height: 5.52vh;   
+    width: 47.4vw;
+    font-size: 0.85em;
+    cursor: pointer;
+    box-shadow: 0.063em 0.125em 0.375em 0.063em var(--black);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.125em solid var(--black);
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 0.938em;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--main-red);
+    height: 2.5em;
+    width: 50vw; 
+}
+
+.btn:hover {
+    background-color: var(--light-red-one);
+    border-color: var(--gray);
+    box-shadow: 0.125em 0.063em 0.313em 0.063em var(--light-red-two);
+    transition: 0.2s;
+}
+
+#card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50vw;   
+    height: 50vh;
+    background-color: var(--gray);
+    border-radius: 1.563em;
+}
+
+#thumbnail {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#thumb-img {
+    height: 30vh;
+    width: 100%;
+    border: 0.125em thin var(--black);
+    border-radius: 0.625em;
+}
+
+#details {
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 30vh;
+    width: 10vw;
+    
+}
+
+.select-options {
+    border: 1em;
+    border-radius: 1.2em;
+    background-color: var(--light-red-one);
+    color: var(--white);
+    font-size: 0.9rem;
+    padding: 1.15rem;
+}
+
+/* Style the arrow inside the select element */
+
+.file-select {
+    position: relative;  
+}
+
+.arrow {
+    border: 1em;
+    border-radius: 0 1.2em 1.2em 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--light-red-two);
+    height: 100%;
+    width: 2em;
+    pointer-events: none;
+}
+
+.arrow::before, .arrow::after {
+    --arrow-size: 0.5em;
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow::before {
+    border-left: var(--arrow-size) solid transparent;
+    border-right: var(--arrow-size) solid transparent;
+    border-bottom: var(--arrow-size) solid var(--black);
+    top: 40%;
+}
+
+.arrow::after {
+    border-left: var(--arrow-size) solid transparent;
+    border-right: var(--arrow-size) solid transparent;
+    border-top: var(--arrow-size) solid var(--black);
+    top: 60%;
+}
+
+#footer {
+    background-color: var(--light-red-two);
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 18vh;
+    padding: 2rem 0;
+}
+
+#foot-first, #foot-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#foot-sec {
+    flex-direction: column;
+}
+
+#hr-footer {
+    margin: 1rem 0;
+}
+
+#f-list-two .list-item {
+    display: inline-flex;
+    font-size: 1.7rem;
+    padding: 0.8rem;
+}
+
+/* Apply responsiveness */
+
+@media all and (max-width: 71.875em) {
+    
+    #header {
+        flex-direction: column;
+        height: 4vh;       
+    }
+
+    #header #logo {
+        position: absolute;
+        left: 0.938em;
+        top: 0.938em;     
+    }
+
+    #navbar {   
+        margin-top: 8.8rem;
+        width: 100vh;
+    }
+
+    .nav-list {
+        display: none;
+        background-color: var(--light-red-two);
+        padding: 1.563em 0 0 0;
+        text-align: center;
+        width: 100%;  
+    }
+
+    .nav-list .list-item {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+        border-top: 0.063em solid var(--white);
+    }
+
+    #dropdown {
+        display: block;
+        position: absolute;
+        right: 0.625em;
+        top: 0.625em;
+        margin-right: 1.563em;
+    }
+
+    #dropdown:hover{
+        opacity: 0.6;
+        color: var(--gray);
+        transition: 0.2s;
+    }
+
+    #f-list-one {
+        display: flex;  
+    }
+
+    #card {
+        border-radius: 0;
+        width: 100vw;
+        height: 70vh;
+        flex-direction: column;
+    }
+
+    #details {
+        height: 30vh;
+        width: 50vw;  
+    }
+
+    #footer {
+        height: 30vh;
+    }
+    .active {
+        display: block;
+    } 
+}

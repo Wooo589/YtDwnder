@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %} Video Information {% endblock %}
+{% block main %}
+<form action="/converted" method="post">
+    <div id="card">
+        <div id="thumbnail">
+            <img src={{thumbnail}} alt="thumbnail image" id="thumb-img">
+        </div>
+        <div id="details">
+            <h5>{{title}}</h5>
+            <p>{{author}}</p>
+            <p>{{time}}</p>
+            <div class="file-select">
+                <select class="select-options" name="file-format">
+                    <option disabled selected>File format</option>
+                    <optgroup label="MP4">
+                        <option class="file-opt">720p</option>
+                        <option class="file-opt">480p</option>
+                        <option class="file-opt">360p</option>
+                        <option class="file-opt">240p</option>
+                        <option class="file-opt">144p</option>
+                    </optgroup>
+                    <optgroup label="MP3">
+                        <option class="file-opt">128kbps</option>
+                        <option class="file-opt">48kbps</option>
+                    </optgroup>
+                </select>
+                <span class="arrow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn" type="submit">Download Video</button>
+    </div>
+</form>
+{% endblock %}

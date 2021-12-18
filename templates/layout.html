@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/fontawesome/css/all.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/favicon/site.webmanifest">
+    <title>YtDwnder:{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header id="header">
+        <a id="logo" href="#introduction-section">YtDwnder</a>        
+        <nav id="navbar">                 
+            <ul class="nav-list" id="nav-opt">
+                <a href="#introduction-section">
+                    <li class="list-item">Introduction</li>
+                </a>
+                <a href="#main">
+                    <li class="list-item">Video Download</li>
+                </a>
+                <a href="#footer">
+                    <li class="list-item">Contacts</li>
+                </a>
+                
+            </ul>
+        </nav>
+        <div id="dropdown">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>          
+    </header>  
+    <section id="introduction-section">
+        <h1 class="title">Introduction</h1>
+        <p class="text">On YtDwnder, you're able to download a Youtube video to your local machine with the file extensions available, which are MP4 and MP3.</p>
+        <p class="text">Scroll down or go to Video Download in the navigation bar to make the process.</p>
+    </section>
+    <hr>
+    <main id="main">
+        <div class="message">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </div>
+    {% block main %}
+    {% endblock %}
+    </main>
+    <footer id="footer">
+        <div id="foot-first">
+            <ul id="f-list-one">
+                <li class="list-item">
+                    <a href="#">About Us</a>
+                </li>
+                <li class="list-item">
+                    <a href="#">Privacy Policy</a>
+                </li>
+                <li class="list-item">
+                    <a href="#">Terms of Service</a>
+                </li>
+            </ul>
+        </div>
+        <hr id="hr-footer">
+        <div id="foot-sec">
+            <p>&copy; 2021 - All rights reserved</p>
+            <ul id="f-list-two">
+                <li class="list-item">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </li>
+                <li class="list-item">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="list-item">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script src="../static/script.js"></script>
+</html>
